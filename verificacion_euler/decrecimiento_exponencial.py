@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from euler import euler
+from metodos_euler import euler
 import matplotlib.pyplot as plt
 import math
 
@@ -16,7 +16,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(
     t_exacta,
     [solucion(t) for t in t_exacta],
-    label="Solución exacta",
+    label="$x(t)=e^{-t}$",
     color="black",
     linewidth=2,
 )
@@ -38,7 +38,6 @@ for h, color in (
 
 ax.set_xlabel("t")
 ax.set_ylabel("x(t)")
-ax.set_title("Decaimiento exponencial: solución y aproximaciones de Euler")
 ax.grid(True)
 ax.legend()
 fig.tight_layout()

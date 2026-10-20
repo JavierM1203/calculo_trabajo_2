@@ -2,10 +2,10 @@ import sys
 from pathlib import Path
 import math
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from euler import euler, euler_mejorado
+from metodos_euler import euler, euler_mejorado
 
 def f(t, x):
-    return -x
+    return -solucion(t)
 
 def solucion(t):
     return math.exp(-t)

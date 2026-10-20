@@ -1,12 +1,12 @@
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from euler import euler
+from metodos_euler import euler
 import matplotlib.pyplot as plt
 import math
 
 def f(t, x):
-    return -x
+    return -solucion(t)
 
 def solucion(t):
     return math.exp(-t)
@@ -23,7 +23,7 @@ for h in valores_h:
         abs(x_aprox - solucion(t))
         for t, x_aprox in zip(valores_t, valores_x)
     ]
-    plt.plot(valores_t, errores, label=f"h = {h}")
+    plt.plot(valores_t, errores, label=f"Euler (h = {h})")
     resultados.append((h, pasos, errores[-1], max(errores)))
 
 print(f"{'h':>8} | {'Número de pasos':>15} | {'Error final':>14} | {'Error máximo':>14}")
@@ -36,7 +36,6 @@ for h, pasos, error_final, error_maximo in resultados:
 
 plt.xlabel("t")
 plt.ylabel("Error absoluto")
-plt.title("Error absoluto del método de Euler")
 plt.grid(True)
 plt.legend()
 plt.tight_layout()

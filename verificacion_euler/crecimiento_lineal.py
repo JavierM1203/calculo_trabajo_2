@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from euler import euler
+from metodos_euler import euler
 import matplotlib.pyplot as plt
 
 def f(t, x):
@@ -19,7 +19,7 @@ axes[0].plot(
     color="black",
     linewidth=2,
 )
-axes[0].set_title("Solución exacta")
+axes[0].set_title("Solución de referencia x(t) = t")
 
 for ax, h, color in zip(
     axes[1:],
@@ -40,6 +40,5 @@ for ax in axes:
     ax.set_ylabel("x(t)")
     ax.grid(True)
 
-fig.suptitle("Solución y aproximaciones de Euler")
 fig.tight_layout()
 plt.show()
