@@ -5,7 +5,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 from metodos_euler import euler, euler_mejorado
 
 def f(t, x):
-    return -solucion(t)
+    return -x
 
 def solucion(t):
     return math.exp(-t)

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import math
 
 def f(t, x):
-    return -solucion(t)
+    return -x
 
 def solucion(t):
     return math.exp(-t)
